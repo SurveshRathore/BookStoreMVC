@@ -30,5 +30,18 @@ namespace ManagerLayer.Services
 				throw;
 			}
         }
+
+        public string Login(UserModel userModel)
+        {
+			try
+			{
+				return this.userRL.Login(userModel);
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+        }
     }
 }

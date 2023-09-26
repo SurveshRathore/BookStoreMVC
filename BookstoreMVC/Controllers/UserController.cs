@@ -38,6 +38,38 @@ namespace BookstoreMVC.Controllers
                 throw;
             }
         }
+
+        [HttpGet]
+        public IActionResult UserLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult UserLogin([Bind] UserModel userModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = this.userBL.Login(userModel);
+                    return View(result);
+                }
+                return View(userModel);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpGet]
+        public IActionResult DashBoard()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();

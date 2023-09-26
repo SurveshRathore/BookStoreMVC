@@ -10,5 +10,6 @@ namespace ManagerLayer.Interface
     public interface IUserBL
     {
         public UserModel RegisterUser(UserModel userModel);
+        public string Login(UserModel userModel);
     }
 }
